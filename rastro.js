@@ -1,10 +1,7 @@
 // entrega mongo - rastro
-// antes de pegar nada: use rastro
-// los de B4 dan error (es lo que se pide), hay que pegarlos de uno en uno
-
 
 // Ejercicio B1 - carga de datos
-// esto es lo que venia en la entrega, lo pongo para que el archivo funcione entero
+
 db.usuarios.insertMany([
   { _id: ObjectId("660000000000000000000001"), nombre: "Ana García",  email: "ana@rastro.es",   ciudad: "Valencia",  fechaAlta: new Date("2025-03-10"), favoritos: [ObjectId("670000000000000000000008")], valoracionMedia: 0, numValoraciones: 0 },
   { _id: ObjectId("660000000000000000000002"), nombre: "Luis Martín", email: "luis@rastro.es",  ciudad: "Valencia",  fechaAlta: new Date("2024-11-02"), favoritos: [], valoracionMedia: 0, numValoraciones: 0 },
@@ -156,7 +153,7 @@ db.anuncios.insertOne({ titulo: "Prueba lámpara", precio: "75", categoria: "Mue
 db.anuncios.find({ precio: { $lt: 100 } }, { titulo: 1, precio: 1, _id: 0 })
 
 // Ejercicio B4.5 - sin $set
-// error: Update document requires atomic operators
+
 db.anuncios.updateOne({ _id: ObjectId("670000000000000000000005") }, { precio: 80 })
 
 // Ejercicio B4.6 - id como string
